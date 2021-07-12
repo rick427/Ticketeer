@@ -105,6 +105,15 @@ if(storedOptions){
 generateBtn.addEventListener('click', (e) => {
     let tickets = [];
 
+    if(+lengthEl.value > 10){
+        alert('WHO DEY BREEETE? Abeg reduce that ticket length. (Length <= 10)');
+        return;
+    }
+    if(+lengthEl.value <= 0){
+        alert('YOU STILL DEY BREEETE? Abeg increase that ticket length.');
+        return;
+    }
+
     const options = {
         length: +lengthEl.value,
         hasLower: lowercaseEl.checked,
@@ -117,10 +126,6 @@ generateBtn.addEventListener('click', (e) => {
     const {hasUpper, hasLower, hasNumber, hasSymbol, length} = options;
 
     const ticket = generateTicket(hasUpper, hasLower, hasNumber, hasSymbol, length);
-    if(!ticket){
-        alert('You cannot create an empty ticket')
-        return;
-    }
     if(localStorage.getItem('tickets')){
         tickets = [...JSON.parse(localStorage.getItem('tickets'))];
     }
