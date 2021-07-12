@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketeer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script defer type="text/javascript" src="/script.js"></script>
+</head>
+<body>
+    <div class="container-md p-3">
+        <div class="row g-5">
+            <div class="col-lg-5 col-md-8 col-sm-12">
+                <h2 class="display-6 text-start">Ticketeer</h2>
+                <p class="lead text-start">Your favorite ticketing software</p>
+                <p class="text-muted text-start">
+                    How does it work ? Easy! You generate as much tickets as you want 
+                    based on the options displayed below. After generation, you can check it's validity 
+                    by searching for it and we'll tell you if it's a valid ticket or not.
+                </p>
+        
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Generate Tickets!</h5>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="result" disabled>
+                            <button class="btn btn-outline-primary" type="button" id="clipboard">
+                                <i class="bi-clipboard-check"></i>
+                            </button>
+                        </div>
+
+                        <div class="settings">
+                            <div class="setting">
+                                <label for="length" class="form-label">Select your ticket length</label>
+                                <input type="number" class="form-control" id="length" min="4" max="10" value="10">
+                            </div>
+                            <div class="setting mt-4">
+                                <label for="uppercase" class="form-check-label me-2">
+                                    Include uppercase characters
+                                </label>
+                                <input type="checkbox" id="uppercase" class="form-check-input" checked>
+                            </div>
+                            <div class="setting mt-3">
+                                <label for="lowercase" class="form-check-label me-2">
+                                    Include lowercase characters
+                                </label>
+                                <input type="checkbox" id="lowercase" class="form-check-input" checked>
+                            </div>
+                            <div class="setting mt-3">
+                                <label for="numbers" class="form-check-label me-2">
+                                    Include numbers
+                                </label>
+                                <input type="checkbox" id="numbers" class="form-check-input" checked>
+                            </div>
+                            <div class="setting mt-3">
+                                <label for="symbols" class="form-check-label me-2">
+                                    Include symbols
+                                </label>
+                                <input type="checkbox" id="symbols" class="form-check-input" checked>
+                            </div>
+                            <div class="d-grid gap-2 mt-4 mb-2">
+                                <button id="generate" class="btn btn-primary btn-block">Generate Ticket</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7" id="info-column">
+                <div class="input-group mb-3">
+                    <button class="btn btn-danger" type="button" id="delete" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Tooltip">
+                        <i class="bi-trash"></i>
+                    </button>
+                    <input type="text" id="search" class="form-control" placeholder="Enter your ticket">
+                    <button class="btn btn-success" type="button" id="validate">
+                        <i class="bi-search"></i>
+                    </button>
+                </div>
+                <div class="table-responsive" id="table-container">
+                    <table class="table table-bordered">
+                        <caption>List of Tickets</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Ticket</th>
+                                <th scope="col">Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <p class="lead text-danger fs-6 italic text-center pt-4">Built by Kirigaya.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
