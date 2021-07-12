@@ -110,7 +110,7 @@ generateBtn.addEventListener('click', (e) => {
         return;
     }
     if(+lengthEl.value <= 3){
-        alert('YOU STILL DEY BREEETE? Abeg increase that ticket length. (Ticket >= 3)');
+        alert('YOU STILL DEY BREEETE? Abeg increase that ticket length. (Ticket >= 4)');
         return;
     }
 
