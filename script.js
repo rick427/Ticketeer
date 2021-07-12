@@ -106,11 +106,11 @@ generateBtn.addEventListener('click', (e) => {
     let tickets = [];
 
     if(+lengthEl.value > 10){
-        alert('WHO DEY BREEETE? Abeg reduce that ticket length. (Length <= 10)');
+        alert('WHO DEY BREEETE? Abeg reduce that ticket length. (Ticket <= 10)');
         return;
     }
-    if(+lengthEl.value <= 0){
-        alert('YOU STILL DEY BREEETE? Abeg increase that ticket length.');
+    if(+lengthEl.value <= 3){
+        alert('YOU STILL DEY BREEETE? Abeg increase that ticket length. (Ticket >= 3)');
         return;
     }
 
