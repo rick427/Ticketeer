@@ -48,6 +48,7 @@ function loadTableData(){
         })
     }
 }
+
 loadTableData();
 
 // DELETE TICKETS
